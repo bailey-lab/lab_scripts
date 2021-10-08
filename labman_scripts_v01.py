@@ -286,7 +286,7 @@ def barcodescanbinner(args):
       validinput=[label, '!N', '!NEXT', '!EXIT'] 
       if label in config['BINS']:   validinput[0] =  label  + label 
       response= get_validresponse (validinput , f'Scan {label}'
-           , f"Scan barcode label({label}) or type !N(ext) or !E(end) =>")
+           , f"Scan barcode label({label}) or type !N(ext) or !E(end) =>",'cyan')
       if  response in ['!NEXT', '!N']:
         print ("Proceeding to next label...")
         continue
