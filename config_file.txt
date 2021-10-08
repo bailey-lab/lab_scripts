@@ -1,0 +1,88 @@
+
+#####################################################
+### CONFIG FILE FOR BARCODE_BINNER
+#####################################################
+##this file contains key configuration information
+##a config file is used for consistency given the program
+##may be restarted multiple times with multiple users
+##thus an expert user is allowed to fully control how it setsup
+## and other users can simply execute the program
+ 
+##unlike other config files variable names are case sensitive
+#white space is a delimiter  and thus adhored within a key or a value
+#NOTE -- white space will be removed between keys and values
+###############################################################
+#NOTE -- leading white space on a line associates the data on 
+#         next line with previous line (don't do it)
+###############################################################
+
+
+[BINS]
+#bins/bags are where samples will be placed 
+#BADBARCODE is where barcodes go that don't match a sample barcode
+#FAILEDBIN is the bin/bag where all bins go if they don't mactch provide
+#regex: is used for regular expression denotation
+
+c_A11 = gha_c_A11
+c_A12 = gha_c_A12
+c_A13 = gha_c_A13
+c_A14 = gha_c_A14
+c_C01 = gha_c_C01
+c_C02 = gha_c_C02
+c_P22 = gha_c_P22
+i_A11 = gha_i_A11
+i_A12 = gha_i_A12
+i_A13 = gha_i_A13
+i_A14 = gha_i_A14
+i_C01 = gha_i_C01
+i_C02 = gha_i_C02
+i_P22 = gha_i_P22
+i_V31 = gha_i_V31
+i_V32 = gha_i_V32
+M42   = gha_M42
+GHANA =    regex:gab_
+MALAWI =   regex:mal_
+
+
+[REQUIRED]
+
+FILEOUTSAMPLE=outputfile_samples_processed.tsv
+#   is where data from input is saved once scanned
+
+FILEOUTBAD=outputfile_badcodes.tsv
+#   all BADCODE designations 
+#   essentially everything that can't match as sample
+#   barcodes that don't match pattern or don't map to sample
+
+ 
+BAGSIZE=50
+#  default size (# of samples) of bag -- overide in [BAGSIZE]
+
+#name of the bag set if potentially combinding numerous sets
+BAGSETNAME=GhanaJAB
+#name for set of bags -- may be useful if multiple scans taking place
+
+ 
+BAGNUM=1
+#    is the starting bag number which increments as bags fill
+#regular expression to match within the barcode in the samplesheet AND the scanned barcode
+# it will extract the first grouping "()" 
+# for example (P\d+) this allows P_32342-1 to match P32342-4 
+
+BARCODEMATCH=(P\d+)
+#regular expression applied to scanned barcode and the sample file barcodes
+#allows common code to be matched 
+
+[BAGSIZE]
+#nondefault bagsize for bins above as well as BADBIN and BADCODE
+GHANA =  100
+MALAWI = 100
+BADCODE=3
+
+[BAGNUM]
+#nodefault bag# to start at from bins above as well as BADBIN and BADCODE
+GHANA = 100
+ 
+ 
+ 
+
