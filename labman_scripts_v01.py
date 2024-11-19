@@ -341,7 +341,7 @@ def barcodescanbinner(args):
   ################################################################
     ## sophesticated https://pypi.org/project/pynput/
   print (termcolor.colored( pyfiglet.figlet_format( "---------\nSTARTING\n---------\n"
-        ,font='banner3'),'grey', attrs=['reverse'] ))
+        ,font='banner'),'grey', attrs=['reverse'] ))
   while ( True ):
     ##SCAN 
     # banner, big
