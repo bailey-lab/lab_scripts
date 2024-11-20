@@ -1,13 +1,9 @@
 # labman_scripts
-a few utility scripts supporting lab work in the bailey lab which may be generally useful to other groups 
+A collecton of utility scripts supporting lab work in the bailey lab which may be generally useful to other groups 
 
+_Currently a collection of one script_
 
-*barcode scanning and binning for organizing projects involing thousands and thousands of samples
-
-
-
-
-
+*barcodescanbin* code to rapidly bin into groups machine readable barcoded samples into a container of your choice
 
 
 
